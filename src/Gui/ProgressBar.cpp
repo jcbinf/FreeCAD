@@ -421,6 +421,8 @@ void ProgressBar::enterControlEvents()
 
     // Make sure that we get the key events, otherwise the Inventor viewer usurps the key events
     // This also disables accelerators.
+    WId wid = effectiveWinId();
+    
     grabKeyboard();
 }
 

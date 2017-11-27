@@ -66,6 +66,9 @@ using Base::Console;
 using Base::Sequencer;
 using namespace Gui;
 
+// jcb for debug xerror
+#include <X11/Xlib.h>
+#include <QX11Info>
 
 //===========================================================================
 // Std_Workbench
@@ -156,6 +159,8 @@ StdCmdRecentFiles::StdCmdRecentFiles()
  */
 void StdCmdRecentFiles::activated(int iMsg)
 {
+    Display * display = QX11Info::display();
+    XSynchronize(display, True);
     RecentFilesAction* act = qobject_cast<RecentFilesAction*>(_pcAction);
     if (act) act->activateFile( iMsg );
 }

@@ -46,6 +46,7 @@
 #include <QLocale>
 #include <QTextCodec>
 
+
 // FreeCAD header
 #include <Base/Console.h>
 #include <Base/Interpreter.h>
